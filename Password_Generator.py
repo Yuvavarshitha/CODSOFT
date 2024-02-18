@@ -3,15 +3,9 @@ import string
 import tkinter as tk
 from tkinter import font
 
-
-
-def printOP():
-    print(lenEntry.get(), checkOpt1.get(), checkOpt2.get(), checkOpt3.get(), checkOpt4.get())
-
 #minimum password length will be 6
 def generate_password(length, lowerCase, upperCase, symbol, number):
     length = int(length)
-    inc = 1
     pwd = ''
     alphabets = ''
     numerals = ''
@@ -36,10 +30,7 @@ def generate_password(length, lowerCase, upperCase, symbol, number):
     showResult(pwd)
 
 def showResult(password):
-    msg = tk.Message(frame1, text=password)
-    msg.pack(side=tk.TOP)
-
-#print ( "Genrated Password: ", generate_password(10, True, True, True, True))
+    msg.configure(text=password)
 
 window = tk.Tk()
 window.configure(background="#EB5E28")
@@ -84,7 +75,7 @@ genBtn = tk.Button(frame1, text="Generate Password",
                    bg = "#CCC5B9")
 genBtn.pack(side=tk.TOP)
 
-msg = tk.Message(frame1, text="")
+msg = tk.Message(frame1, text="", width=200)
 msg.pack(side=tk.TOP)
 
 window.mainloop()
