@@ -6,26 +6,23 @@ from tkinter import font
 #minimum password length will be 6
 def generate_password(length, lowerCase, upperCase, symbol, number):
     length = int(length)
-    pwd = ''
-    alphabets = ''
-    numerals = ''
-    symbols = ''
+    char_to_use = ''
     #Charcters used in password
     if lowerCase and upperCase:
-        alphabets = ''.join(random.choice(string.ascii_letters) for i in range(length-4))
+        char_to_use+=(string.ascii_letters)
     elif lowerCase:
-        alphabets = ''.join(random.choice(string.ascii_lowercase) for i in range(length-4))
+        char_to_use+=(string.ascii_lowercase)
     else:
-        alphabets = ''.join(random.choice(string.ascii_uppercase) for i in range(length-4))
+        char_to_use+=(string.ascii_uppercase)
 
     #symbols used in the password
     if symbol:
-        symbols = ''.join(random.choice(string.punctuation) for i in range(2))
+        char_to_use+=string.punctuation
     #numbers used in the password
     if number:
-        numerals = ''.join(random.choice(string.digits) for i in range(2))
+        char_to_use+=(string.digits)
 
-    pwd = alphabets + symbols + numerals
+    pwd = ''.join(random.choice(char_to_use) for i in range(length))
 
     showResult(pwd)
 
