@@ -31,14 +31,14 @@ def showResult(password):
     pwdField.insert(0,password)
 
 window = tk.Tk()
-window.configure(background="#EB5E28")
+window.configure(background="#3C3633")
 window.geometry("500x500")
 
-label = tk.Label(window, text="PassWord Generator", bg = "#EB5E28", font=("Arial", 20))
+label = tk.Label(window, text="PassWord Generator", fg="#E0CCBE",bg = "#3C3633", font=("Fantasy",30,"italic"))
 label.pack(side=tk.TOP, pady=30)
 
 frame1 = tk.Frame(window)
-frame1.pack(side=tk.TOP,padx=20)
+frame1.pack(side=tk.TOP, padx=20)
 
 inpLabel = tk.Label(frame1, text="Specify Password length", font=("Arial", 17))
 inpLabel.pack(side=tk.TOP,padx=20, pady=10)
@@ -55,16 +55,16 @@ checkOpt3 = tk.BooleanVar()
 checkOpt4 = tk.BooleanVar()
 
 opt1 = tk.Checkbutton(frame1, text="Lowercase", variable=checkOpt1, onvalue=True, offvalue=False, font=("Helvetica", 17))
-opt1.pack(side=tk.TOP,padx=20)
+opt1.pack(side=tk.TOP,padx=20, anchor="w")
 
 opt2 = tk.Checkbutton(frame1, text="Uppercase", variable=checkOpt2, onvalue=True, offvalue=False, font=("Helvetica", 17))
-opt2.pack(side=tk.TOP,padx=20)
+opt2.pack(side=tk.TOP,padx=20, anchor="w")
 
 opt3 = tk.Checkbutton(frame1, text="Symbols", variable=checkOpt3, onvalue=True, offvalue=False, font=("Arial", 17))
-opt3.pack(side=tk.TOP,padx=20)
+opt3.pack(side=tk.TOP,padx=20, anchor="w")
 
 opt4 = tk.Checkbutton(frame1, text="Numbers", variable=checkOpt4, onvalue=True, offvalue=False, font=("Arial", 17))
-opt4.pack(side=tk.TOP,padx=20)
+opt4.pack(side=tk.TOP,padx=20, anchor="w")
 
 #lambda: generate_password(lenEntry.get(), checkOpt1, checkOpt2, checkOpt3, checkOpt4)
 genBtn = tk.Button(frame1, text="Generate Password", 
@@ -75,8 +75,5 @@ genBtn.pack(side=tk.TOP,padx=20)
 
 pwdField = tk.Entry(frame1)
 pwdField.pack(side=tk.TOP,padx=20, pady=10)
-
-msg = tk.Message(frame1, text="", width=200)
-msg.pack(side=tk.TOP,padx=20)
 
 window.mainloop()
